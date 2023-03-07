@@ -1,6 +1,7 @@
 package net.celpuff.celmod;
 
 import com.mojang.logging.LogUtils;
+import net.celpuff.celmod.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,6 +25,8 @@ public class CelMod
     public CelMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
